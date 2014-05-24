@@ -354,6 +354,9 @@ class AMQPReader
             case 'A': // Array
                 $val = $this->read_array();
                 break;
+            case 'V': // void
+                $val = null;
+                break;                
             default:
                 // UNKNOWN TYPE
                 throw new \RuntimeException("Usupported table field type {$fieldType}");
